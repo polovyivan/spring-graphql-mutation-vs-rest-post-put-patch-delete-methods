@@ -1,0 +1,20 @@
+scalar Date
+
+type Mutation {
+     createCustomer (createCustomerRequest : CreateCustomerRequest) : String
+     updateCustomer (
+                     customerId : String
+                     updateCustomerRequest : UpdateCustomerRequest) : String
+}
+
+input CreateCustomerRequest {
+      fullName : String
+      phoneNumber : String
+      address : String
+}
+
+input UpdateCustomerRequest {
+      fullName : String
+      phoneNumber : String
+      address : String
+}

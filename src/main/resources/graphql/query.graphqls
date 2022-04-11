@@ -1,0 +1,21 @@
+scalar Date
+
+type Query {
+     customers : [CustomerResponse]
+}
+
+type CustomerResponse {
+      id : String
+      fullName : String
+      phoneNumber : String
+      address : String
+      createdAt : Date
+      purchaseTransactions : [PurchaseTransactionResponse]
+}
+
+type PurchaseTransactionResponse {
+      id : String
+      paymentType : String
+      amount : Float
+      createdAt : Date
+}
