@@ -2,9 +2,29 @@ scalar Date
 
 type Mutation {
      createCustomer (createCustomerRequest : CreateCustomerRequest) : String
+
      updateCustomer (
                      customerId : String
                      updateCustomerRequest : UpdateCustomerRequest) : String
+
+     partiallyUpdateCustomer (customerId : String
+                              partiallyUpdateCustomerRequest : PartiallyUpdateCustomerRequest ) : String
+
+     deleteCustomer (customerId : String) : String
+
+     createPurchaseTransaction(customerId : String
+                               purchaseTransactionRequest : CreatePurchaseTransactionRequest) : String
+
+     updatePurchaseTransaction (customerId : String
+                                purchaseTransactionId : String
+                                updatePurchaseTransactionRequest : UpdatePurchaseTransactionRequest) : String
+
+     partiallyUpdatePurchaseTransaction (customerId : String
+                                          purchaseTransactionId : String
+                                          partiallyUpdatePurchaseTransactionRequest : PartiallyUpdatePurchaseTransactionRequest) : String
+
+     deletePurchaseTransaction (customerId : String
+                                purchaseTransactionId : String) : String
 }
 
 input CreateCustomerRequest {
@@ -17,4 +37,22 @@ input UpdateCustomerRequest {
       fullName : String
       phoneNumber : String
       address : String
+}
+
+input PartiallyUpdateCustomerRequest {
+      phoneNumber : String
+}
+
+input CreatePurchaseTransactionRequest {
+      paymentType : String
+      amount : Float
+}
+
+input UpdatePurchaseTransactionRequest {
+      paymentType : String
+      amount : Float
+}
+
+input PartiallyUpdatePurchaseTransactionRequest {
+      amount : Float
 }

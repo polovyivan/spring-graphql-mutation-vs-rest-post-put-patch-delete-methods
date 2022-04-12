@@ -14,14 +14,4 @@ public record CustomerGraphQLQueryController(CustomerService customerService) im
         return customerService.getAllCustomersWithFilters();
     }
 
-    //
-    //    public List<PurchaseTransactionResponse> customerTransactions(@NotNull String customerId) {
-    //        return customerService.getAllCustomerPurchaseTransactions(customerId);
-    //    }
-    //
-    //    public PurchaseTransactionResponse customerTransaction(@NotNull String customerId,
-    //            @NotNull String purchaseTransactionId) {
-    //        return customerService.getCustomerPurchaseTransactionsById(customerId, purchaseTransactionId);
-    //    }
-
 }

@@ -89,7 +89,6 @@ public record CustomerRESTController(CustomerService customerService) {
          customerService.partiallyUpdatePurchaseTransaction(customerId, purchaseTransactionId, partiallyUpdatePurchaseTransactionRequest);
     }
 
-    // DELETE
     @DeleteMapping(path = "/v1/customers/{customerId}/purchase-transactions/{purchaseTransactionId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deletePurchaseTransaction(@PathVariable String customerId,
