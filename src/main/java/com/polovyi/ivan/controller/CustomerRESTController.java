@@ -39,7 +39,7 @@ public record CustomerRESTController(CustomerService customerService) {
     @ResponseStatus(HttpStatus.CREATED)
     public void createCustomer(@Valid @RequestBody CreateCustomerRequest createCustomerRequest,
             UriComponentsBuilder uriBuilder, HttpServletResponse response) {
-        String customerId = customerService.createCustomer(createCustomerRequest);
+        String customerId = customerService.createCustomer(createCustomerRequest).getId();
         response.addHeader("location", uriBuilder.path("/v1/customers/{id}").buildAndExpand(customerId).toUriString());
     }
 
@@ -68,7 +68,7 @@ public record CustomerRESTController(CustomerService customerService) {
     public void createPurchaseTransaction(@PathVariable String customerId,
             @Valid @RequestBody CreatePurchaseTransactionRequest purchaseTransactionRequest,
             UriComponentsBuilder uriBuilder, HttpServletResponse response) {
-        String purchaseTransactionId = customerService.createPurchaseTransaction(customerId, purchaseTransactionRequest);
+        String purchaseTransactionId = customerService.createPurchaseTransaction(customerId, purchaseTransactionRequest).getId();
         response.addHeader("location", uriBuilder.path(
                         "/v1/customers/".concat(customerId).concat("/purchase-transactions/{purchaseTransactionId}"))
                 .buildAndExpand(purchaseTransactionId).toUriString());

@@ -1,30 +1,46 @@
 scalar Date
 
 type Mutation {
-     createCustomer (createCustomerRequest : CreateCustomerRequest) : String
+     createCustomer (createCustomerRequest : CreateCustomerRequest) : CustomerResponse
 
      updateCustomer (
                      customerId : String
-                     updateCustomerRequest : UpdateCustomerRequest) : String
+                     updateCustomerRequest : UpdateCustomerRequest) : CustomerResponse
 
      partiallyUpdateCustomer (customerId : String
-                              partiallyUpdateCustomerRequest : PartiallyUpdateCustomerRequest ) : String
+                              partiallyUpdateCustomerRequest : PartiallyUpdateCustomerRequest ) : CustomerResponse
 
      deleteCustomer (customerId : String) : String
 
      createPurchaseTransaction(customerId : String
-                               purchaseTransactionRequest : CreatePurchaseTransactionRequest) : String
+                               purchaseTransactionRequest : CreatePurchaseTransactionRequest) : PurchaseTransactionResponse
 
      updatePurchaseTransaction (customerId : String
                                 purchaseTransactionId : String
-                                updatePurchaseTransactionRequest : UpdatePurchaseTransactionRequest) : String
+                                updatePurchaseTransactionRequest : UpdatePurchaseTransactionRequest) : PurchaseTransactionResponse
 
      partiallyUpdatePurchaseTransaction (customerId : String
                                           purchaseTransactionId : String
-                                          partiallyUpdatePurchaseTransactionRequest : PartiallyUpdatePurchaseTransactionRequest) : String
+                                          partiallyUpdatePurchaseTransactionRequest : PartiallyUpdatePurchaseTransactionRequest) : PurchaseTransactionResponse
 
      deletePurchaseTransaction (customerId : String
                                 purchaseTransactionId : String) : String
+}
+
+type CustomerResponse {
+      id : String
+      fullName : String
+      phoneNumber : String
+      address : String
+      createdAt : Date
+      purchaseTransactions
+}
+
+type PurchaseTransactionResponse {
+      id : String
+      paymentType : String
+      amount : Float
+      createdAt : Date
 }
 
 input CreateCustomerRequest {

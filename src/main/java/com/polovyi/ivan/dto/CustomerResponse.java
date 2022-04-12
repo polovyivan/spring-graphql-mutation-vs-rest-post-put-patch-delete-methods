@@ -7,7 +7,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Data
@@ -29,7 +31,8 @@ public class CustomerResponse {
     private List<PurchaseTransactionResponse> purchaseTransactions;
 
     public static CustomerResponse valueOf(CustomerEntity customer) {
-        List<PurchaseTransactionResponse> purchaseTransactionResponses = customer.getPurchaseTransactions().stream()
+        List<PurchaseTransactionResponse> purchaseTransactionResponses = Optional.ofNullable(customer.getPurchaseTransactions()).orElseGet(
+                        ArrayList::new).stream()
                 .map(PurchaseTransactionResponse::valueOf).collect(Collectors.toList());
         return builder()
                 .id(customer.getId())
