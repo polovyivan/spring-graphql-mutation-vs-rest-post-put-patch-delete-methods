@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.polovyi.ivan</groupId>
-	<artifactId>spring-graphql-mutation-vs-rest-post-put-patch-methods</artifactId>
+	<artifactId>spring-graphql-mutation-vs-rest-post-put-patch-delete-methods</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>spring-graphql-mutation-vs-rest-post-put-patch-methods</name>
+	<name>spring-graphql-mutation-vs-rest-post-put-patch-delete-methods</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>
