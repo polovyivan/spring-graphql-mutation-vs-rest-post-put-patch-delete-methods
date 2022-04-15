@@ -1,0 +1,921 @@
+{
+	"info": {
+		"_postman_id": "9d7bfa06-8b60-4579-a568-570bb50fb9b6",
+		"name": "spring-graphql-mutation-vs-rest-post-put-patch-delete-methods",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/customers-graphql",
+			"item": [
+				{
+					"name": "customers",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query {\n    customers {\n                id\n                fullName \n                phoneNumber\n                address\n                createdAt\n                purchaseTransactions {\n                                        id \n                                        paymentType\n                                        amount \n                                        createdAt\n                                    }\n\n                                                }\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8001/spring-graphql-mutation-vs-rest-post-put-patch-delete-methods/customers-graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"spring-graphql-mutation-vs-rest-post-put-patch-delete-methods",
+								"customers-graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createCustomer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation {\n    createCustomer (createCustomerRequest : {\n                            fullName  : \"Maren Bogisich\"\n                            phoneNumber : \"831.259.2365\"\n                            address : \"Apt. 843 399 Lachelle Crossing, New Eldenhaven, LA 63962-9260\"\n    }) {\n        id\n        fullName \n        phoneNumber\n        address\n        createdAt\n    }\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8001/spring-graphql-mutation-vs-rest-post-put-patch-delete-methods/customers-graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"spring-graphql-mutation-vs-rest-post-put-patch-delete-methods",
+								"customers-graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createCustomers (with variables)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation ($createCustomerRequest : CreateCustomerRequest) {\n    createCustomer (createCustomerRequest : $createCustomerRequest)\n    {\n        id\n        fullName \n        phoneNumber\n        address\n        createdAt\n    }\n}",
+								"variables": "{\n    \"createCustomerRequest\": {\n         \"fullName\"  : \"Maren Bogisich\",\n         \"phoneNumber\" : \"831.259.2365\",\n         \"address\" : \"Apt. 843 399 Lachelle Crossing, New Eldenhaven, LA 63962-9260\"\n    }\n}\n\n"
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8001/spring-graphql-mutation-vs-rest-post-put-patch-delete-methods/customers-graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"spring-graphql-mutation-vs-rest-post-put-patch-delete-methods",
+								"customers-graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCustomer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation {\n    updateCustomer (\n        customerId : \"e6825fe2-b090-4d52-a5b4-f69a0a21ceee\"\n        updateCustomerRequest : {\n                            fullName  : \"Maren Bogisich1\"\n                            phoneNumber : \"831.259.2365\"\n                            address : \"Apt. 843 399 Lachelle Crossing, New Eldenhaven, LA 63962-9260\"\n    }){\n        id\n        fullName \n        phoneNumber\n        address\n        createdAt\n        purchaseTransactions {\n                                id \n                                paymentType\n                                amount \n                                createdAt\n                                           }\n    }\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8001/spring-graphql-mutation-vs-rest-post-put-patch-delete-methods/customers-graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"spring-graphql-mutation-vs-rest-post-put-patch-delete-methods",
+								"customers-graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCustomers (with variables)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation ($updateCustomerRequest : UpdateCustomerRequest\n           $customerId : String) {\n    updateCustomer (\n        customerId : $customerId\n        updateCustomerRequest : $updateCustomerRequest)\n    {\n        id\n        fullName \n        phoneNumber\n        address\n        createdAt\n        purchaseTransactions {\n                                id \n                                paymentType\n                                amount \n                                createdAt\n                                           }\n    }\n} ",
+								"variables": "{\n    \"customerId\" : \"bd7978b5-25da-4260-a523-6267f13b12bf\",\n    \"updateCustomerRequest\": {\n         \"fullName\"  : \"=Maren Bogisich\",\n         \"phoneNumber\" : \"=831.259.2365\",\n         \"address\" : \"=Apt. 843 399 Lachelle Crossing, New Eldenhaven, LA 63962-9260\"\n    }\n}\n\n"
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8001/spring-graphql-mutation-vs-rest-post-put-patch-delete-methods/customers-graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"spring-graphql-mutation-vs-rest-post-put-patch-delete-methods",
+								"customers-graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "partiallyUpdateCustomer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation {\n    partiallyUpdateCustomer (\n        customerId : \"e6825fe2-b090-4d52-a5b4-f69a0a21ceee\"\n        partiallyUpdateCustomerRequest : {\n                                 phoneNumber : \"831.259.2365\"\n    })\n    {\n        id\n        fullName \n        phoneNumber\n        address\n        createdAt\n        purchaseTransactions {\n                                id \n                                paymentType\n                                amount \n                                createdAt\n                                           }\n    }\n} ",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8001/spring-graphql-mutation-vs-rest-post-put-patch-delete-methods/customers-graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"spring-graphql-mutation-vs-rest-post-put-patch-delete-methods",
+								"customers-graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "partiallyUpdateCustomer (with variables)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation ($partiallyUpdateCustomerRequest : PartiallyUpdateCustomerRequest\n           $customerId : String) {\n    partiallyUpdateCustomer (\n        customerId : $customerId\n        partiallyUpdateCustomerRequest : $partiallyUpdateCustomerRequest)\n    {\n        id\n        fullName \n        phoneNumber\n        address\n        createdAt\n        purchaseTransactions {\n                                id \n                                paymentType\n                                amount \n                                createdAt\n                                           }\n    }\n}\n",
+								"variables": "{\n    \"customerId\" : \"e6825fe2-b090-4d52-a5b4-f69a0a21ceee\",\n    \"partiallyUpdateCustomerRequest\": {\n         \"phoneNumber\" : \"=831.259.2365\"\n    }\n}\n\n"
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8001/spring-graphql-mutation-vs-rest-post-put-patch-delete-methods/customers-graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"spring-graphql-mutation-vs-rest-post-put-patch-delete-methods",
+								"customers-graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCustomer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation {\n    deleteCustomer (\n        customerId : \"7a5ddb3a-bb06-44bd-99bd-435b23f494d9\")\n} ",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8001/spring-graphql-mutation-vs-rest-post-put-patch-delete-methods/customers-graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"spring-graphql-mutation-vs-rest-post-put-patch-delete-methods",
+								"customers-graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCustomer (with variables)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation ( $customerId : String) {\n    deleteCustomer (\n        customerId : $customerId\n       )\n}\n",
+								"variables": "{\n    \"customerId\" : \"032752c0-9141-47e4-a3ac-b4e6ae52a6bc\"\n   \n}\n\n"
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8001/spring-graphql-mutation-vs-rest-post-put-patch-delete-methods/customers-graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"spring-graphql-mutation-vs-rest-post-put-patch-delete-methods",
+								"customers-graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createPurchaseTransaction",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation {\n    createPurchaseTransaction ( \n        customerId : \"74a50c3b-c2cb-4c40-bde6-a30276c516d5\"\n        purchaseTransactionRequest : {\n                                  paymentType : \"VISA\"\n                                  amount : 1.00\n    }) {\n        id\n        paymentType\n        amount\n        createdAt\n    }\n} ",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8001/spring-graphql-mutation-vs-rest-post-put-patch-delete-methods/customers-graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"spring-graphql-mutation-vs-rest-post-put-patch-delete-methods",
+								"customers-graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createPurchaseTransaction (with variables)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation ($purchaseTransactionRequest : CreatePurchaseTransactionRequest\n           $customerId : String ){\n    createPurchaseTransaction ( \n        customerId : $customerId\n        purchaseTransactionRequest : $purchaseTransactionRequest)\n    {\n        id\n        paymentType\n        amount\n        createdAt\n    }\n} ",
+								"variables": "{\n    \"customerId\" : \"74a50c3b-c2cb-4c40-bde6-a30276c516d5\",\n    \"purchaseTransactionRequest\" : {\n                                  \"paymentType\" : \"JBC\",\n                                  \"amount\" : 2.00\n    }\n}\n"
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8001/spring-graphql-mutation-vs-rest-post-put-patch-delete-methods/customers-graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"spring-graphql-mutation-vs-rest-post-put-patch-delete-methods",
+								"customers-graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatePurchaseTransaction",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation {\n    updatePurchaseTransaction ( \n        customerId : \"74a50c3b-c2cb-4c40-bde6-a30276c516d5\"\n        purchaseTransactionId : \"dc681b1b-53d5-41c0-b2c2-2be83fe285d1\"\n        updatePurchaseTransactionRequest : {\n                                  paymentType : \"VIS\"\n                                  amount : 1.00\n    }) {\n        id\n        paymentType\n        amount\n        createdAt\n    }\n} ",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8001/spring-graphql-mutation-vs-rest-post-put-patch-delete-methods/customers-graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"spring-graphql-mutation-vs-rest-post-put-patch-delete-methods",
+								"customers-graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatePurchaseTransaction (with variables)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation ($updatePurchaseTransactionRequest : UpdatePurchaseTransactionRequest\n          $customerId : String \n          $purchaseTransactionId : String){\n    updatePurchaseTransaction ( \n        customerId : $customerId\n        purchaseTransactionId : $purchaseTransactionId\n        updatePurchaseTransactionRequest : $updatePurchaseTransactionRequest)\n    {\n        id\n        paymentType\n        amount\n        createdAt\n    }\n} ",
+								"variables": "{\n    \"customerId\" : \"74a50c3b-c2cb-4c40-bde6-a30276c516d5\",\n     \"purchaseTransactionId\" : \"dc681b1b-53d5-41c0-b2c2-2be83fe285d1\",\n    \"updatePurchaseTransactionRequest\" : {\n                                  \"paymentType\" : \"VISA\",\n                                  \"amount\" : 201.00\n    }\n}\n"
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8001/spring-graphql-mutation-vs-rest-post-put-patch-delete-methods/customers-graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"spring-graphql-mutation-vs-rest-post-put-patch-delete-methods",
+								"customers-graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "partiallyUpdatePurchaseTransaction",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation {\n     partiallyUpdatePurchaseTransaction ( \n        customerId : \"74a50c3b-c2cb-4c40-bde6-a30276c516d5\"\n        purchaseTransactionId : \"dc681b1b-53d5-41c0-b2c2-2be83fe285d1\"\n        partiallyUpdatePurchaseTransactionRequest : {\n                                  amount : 13000.00\n    })\n    {\n        id\n        paymentType\n        amount\n        createdAt\n    }\n} ",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8001/spring-graphql-mutation-vs-rest-post-put-patch-delete-methods/customers-graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"spring-graphql-mutation-vs-rest-post-put-patch-delete-methods",
+								"customers-graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "partiallyUpdatePurchaseTransaction (with variables)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation ($partiallyUpdatePurchaseTransactionRequest : PartiallyUpdatePurchaseTransactionRequest\n          $customerId : String \n          $purchaseTransactionId : String){\n    partiallyUpdatePurchaseTransaction ( \n        customerId : $customerId\n        purchaseTransactionId : $purchaseTransactionId\n        partiallyUpdatePurchaseTransactionRequest : $partiallyUpdatePurchaseTransactionRequest)\n    {\n        id\n        paymentType\n        amount\n        createdAt\n    }\n} ",
+								"variables": "{\n    \"customerId\" : \"74a50c3b-c2cb-4c40-bde6-a30276c516d5\",\n     \"purchaseTransactionId\" : \"dc681b1b-53d5-41c0-b2c2-2be83fe285d1\",\n    \"partiallyUpdatePurchaseTransactionRequest\" : {\n                                  \"amount\" : 210.00\n    }\n}\n"
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8001/spring-graphql-mutation-vs-rest-post-put-patch-delete-methods/customers-graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"spring-graphql-mutation-vs-rest-post-put-patch-delete-methods",
+								"customers-graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletePurchaseTransaction",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation {\n     deletePurchaseTransaction ( \n        customerId : \"74a50c3b-c2cb-4c40-bde6-a30276c516d5\"\n        purchaseTransactionId : \"dc681b1b-53d5-41c0-b2c2-2be83fe285d1\")\n} ",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8001/spring-graphql-mutation-vs-rest-post-put-patch-delete-methods/customers-graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"spring-graphql-mutation-vs-rest-post-put-patch-delete-methods",
+								"customers-graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletePurchaseTransaction (with variables)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation ($customerId : String \n          $purchaseTransactionId : String){\n    deletePurchaseTransaction ( \n        customerId : $customerId\n        purchaseTransactionId : $purchaseTransactionId)\n} ",
+								"variables": "{\n    \"customerId\" : \"74a50c3b-c2cb-4c40-bde6-a30276c516d5\",\n     \"purchaseTransactionId\" : \"b33fc6eb-c72b-4fdc-85ac-93c94db61d2f\"\n}\n"
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8001/spring-graphql-mutation-vs-rest-post-put-patch-delete-methods/customers-graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"spring-graphql-mutation-vs-rest-post-put-patch-delete-methods",
+								"customers-graphql"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "/customers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8001/spring-graphql-mutation-vs-rest-post-put-patch-methods/v1/customers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"spring-graphql-mutation-vs-rest-post-put-patch-methods",
+						"v1",
+						"customers"
+					],
+					"query": [
+						{
+							"key": "fullName",
+							"value": "Rueben Purdy",
+							"disabled": true
+						},
+						{
+							"key": "phoneNumber",
+							"value": "893-087-1038",
+							"disabled": true
+						},
+						{
+							"key": "createdAt",
+							"value": "2016-01-30",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/customers",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"fullName\": \"Maren Bogisich\",\n    \"phoneNumber\": \"831.259.2365\",\n    \"address\": \"Apt. 843 399 Lachelle Crossing, New Eldenhaven, LA 63962-9260\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/spring-graphql-mutation-vs-rest-post-put-patch-methods/v1/customers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"spring-graphql-mutation-vs-rest-post-put-patch-methods",
+						"v1",
+						"customers"
+					],
+					"query": [
+						{
+							"key": "fullName",
+							"value": "Rueben Purdy",
+							"disabled": true
+						},
+						{
+							"key": "phoneNumber",
+							"value": "893-087-1038",
+							"disabled": true
+						},
+						{
+							"key": "createdAt",
+							"value": "2016-01-30",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/customers",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"fullName\": \"=Ivan\",\n    \"phoneNumber\": \"=931.259.2365\",\n    \"address\": \"=Bpt. 843 399 Lachelle Crossing, New Eldenhaven, LA 63962-9260\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/spring-graphql-mutation-vs-rest-post-put-patch-methods/v1/customers/5909957b-17a0-4340-bc6a-18c90f225c61o",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"spring-graphql-mutation-vs-rest-post-put-patch-methods",
+						"v1",
+						"customers",
+						"5909957b-17a0-4340-bc6a-18c90f225c61o"
+					],
+					"query": [
+						{
+							"key": "fullName",
+							"value": "Rueben Purdy",
+							"disabled": true
+						},
+						{
+							"key": "phoneNumber",
+							"value": "893-087-1038",
+							"disabled": true
+						},
+						{
+							"key": "createdAt",
+							"value": "2016-01-30",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/customers",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"phoneNumber\": \"=931.259.2365\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/spring-graphql-mutation-vs-rest-post-put-patch-methods/v1/customers/afd457dc-81b8-4b4f-9b7f-98cb28da371c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"spring-graphql-mutation-vs-rest-post-put-patch-methods",
+						"v1",
+						"customers",
+						"afd457dc-81b8-4b4f-9b7f-98cb28da371c"
+					],
+					"query": [
+						{
+							"key": "fullName",
+							"value": "Rueben Purdy",
+							"disabled": true
+						},
+						{
+							"key": "phoneNumber",
+							"value": "893-087-1038",
+							"disabled": true
+						},
+						{
+							"key": "createdAt",
+							"value": "2016-01-30",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/customers",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"phoneNumber\": \"=931.259.2365\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/spring-graphql-mutation-vs-rest-post-put-patch-methods/v1/customers/80d69df0-f934-4ecf-9e58-0d28034f8d96",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"spring-graphql-mutation-vs-rest-post-put-patch-methods",
+						"v1",
+						"customers",
+						"80d69df0-f934-4ecf-9e58-0d28034f8d96"
+					],
+					"query": [
+						{
+							"key": "fullName",
+							"value": "Rueben Purdy",
+							"disabled": true
+						},
+						{
+							"key": "phoneNumber",
+							"value": "893-087-1038",
+							"disabled": true
+						},
+						{
+							"key": "createdAt",
+							"value": "2016-01-30",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/customers/{customerId}/transactionPurchase",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"paymentType\": \"VISA\",\n    \"amount\": 100\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/spring-graphql-mutation-vs-rest-post-put-patch-methods/v1/customers/724ebd5f-e86e-44ce-b2f2-bb20cd25f5b1/purchase-transactions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"spring-graphql-mutation-vs-rest-post-put-patch-methods",
+						"v1",
+						"customers",
+						"724ebd5f-e86e-44ce-b2f2-bb20cd25f5b1",
+						"purchase-transactions"
+					],
+					"query": [
+						{
+							"key": "fullName",
+							"value": "Rueben Purdy",
+							"disabled": true
+						},
+						{
+							"key": "phoneNumber",
+							"value": "893-087-1038",
+							"disabled": true
+						},
+						{
+							"key": "createdAt",
+							"value": "2016-01-30",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/customers/{customerId}/purchase-transactions/{purchaseTransactionId}",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"paymentType\": \"AMEX\",\n    \"amount\": 2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/spring-graphql-mutation-vs-rest-post-put-patch-methods/v1/customers/e83a5769-9141-4123-840f-05452479554d/purchase-transactions/d91b76b7-5b93-43a1-85ea-c15301bd3e29",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"spring-graphql-mutation-vs-rest-post-put-patch-methods",
+						"v1",
+						"customers",
+						"e83a5769-9141-4123-840f-05452479554d",
+						"purchase-transactions",
+						"d91b76b7-5b93-43a1-85ea-c15301bd3e29"
+					],
+					"query": [
+						{
+							"key": "fullName",
+							"value": "Rueben Purdy",
+							"disabled": true
+						},
+						{
+							"key": "phoneNumber",
+							"value": "893-087-1038",
+							"disabled": true
+						},
+						{
+							"key": "createdAt",
+							"value": "2016-01-30",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/customers/{customerId}/purchase-transactions/{purchaseTransactionId}",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"amount\": 2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/spring-graphql-mutation-vs-rest-post-put-patch-methods/v1/customers/3c729076-dd84-4ca3-9096-d9488abdd75c/purchase-transactions/37d3dd3e-923a-4fd8-8a5f-40f20c1416ee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"spring-graphql-mutation-vs-rest-post-put-patch-methods",
+						"v1",
+						"customers",
+						"3c729076-dd84-4ca3-9096-d9488abdd75c",
+						"purchase-transactions",
+						"37d3dd3e-923a-4fd8-8a5f-40f20c1416ee"
+					],
+					"query": [
+						{
+							"key": "fullName",
+							"value": "Rueben Purdy",
+							"disabled": true
+						},
+						{
+							"key": "phoneNumber",
+							"value": "893-087-1038",
+							"disabled": true
+						},
+						{
+							"key": "createdAt",
+							"value": "2016-01-30",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/customers/{customerId}/purchase-transactions/{purchaseTransactionId}",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"amount\": 2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/spring-graphql-mutation-vs-rest-post-put-patch-methods/v1/customers/3c729076-dd84-4ca3-9096-d9488abdd75c/purchase-transactions/37d3dd3e-923a-4fd8-8a5f-40f20c1416ee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"spring-graphql-mutation-vs-rest-post-put-patch-methods",
+						"v1",
+						"customers",
+						"3c729076-dd84-4ca3-9096-d9488abdd75c",
+						"purchase-transactions",
+						"37d3dd3e-923a-4fd8-8a5f-40f20c1416ee"
+					],
+					"query": [
+						{
+							"key": "fullName",
+							"value": "Rueben Purdy",
+							"disabled": true
+						},
+						{
+							"key": "phoneNumber",
+							"value": "893-087-1038",
+							"disabled": true
+						},
+						{
+							"key": "createdAt",
+							"value": "2016-01-30",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
