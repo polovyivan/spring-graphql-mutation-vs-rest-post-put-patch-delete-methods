@@ -8,16 +8,5 @@ import java.time.LocalDate;
 import java.util.List;
 
 public interface CustomerRepository extends JpaRepository<CustomerEntity, String> {
-    @Query("SELECT "
-            + "DISTINCT (customer) from CustomerEntity customer "
-            + "JOIN FETCH "
-            + "customer.purchaseTransactions purchaseTransaction "
-            + "WHERE "
-            + "(:fullName IS NULL OR customer.fullName = :fullName) AND "
-            + "(:phoneNumber IS NULL OR customer.phoneNumber = :phoneNumber) AND "
-            + "(:createdAt IS NULL OR customer.createdAt = :createdAt) AND"
-            + "(:paymentType IS NULL OR purchaseTransaction.paymentType = :paymentType)")
-    List<CustomerEntity> findCustomersWithFilters(String fullName, String phoneNumber, LocalDate createdAt,
-            String paymentType);
 
 }
