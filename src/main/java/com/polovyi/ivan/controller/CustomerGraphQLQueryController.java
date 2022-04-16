@@ -11,7 +11,7 @@ import java.util.List;
 public record CustomerGraphQLQueryController(CustomerService customerService) implements GraphQLQueryResolver {
 
     public List<CustomerResponse> customers() {
-        return customerService.getAllCustomersWithFilters();
+        return customerService.getAllCustomers();
     }
 
 }

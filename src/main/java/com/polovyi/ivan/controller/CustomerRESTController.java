@@ -5,7 +5,6 @@ import com.polovyi.ivan.dto.CreatePurchaseTransactionRequest;
 import com.polovyi.ivan.dto.CustomerResponse;
 import com.polovyi.ivan.dto.PartiallyUpdateCustomerRequest;
 import com.polovyi.ivan.dto.PartiallyUpdatePurchaseTransactionRequest;
-import com.polovyi.ivan.dto.PurchaseTransactionResponse;
 import com.polovyi.ivan.dto.UpdateCustomerRequest;
 import com.polovyi.ivan.dto.UpdatePurchaseTransactionRequest;
 import com.polovyi.ivan.service.CustomerService;
@@ -24,7 +23,6 @@ import org.springframework.web.util.UriComponentsBuilder;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 public record CustomerRESTController(CustomerService customerService) {
@@ -32,7 +30,7 @@ public record CustomerRESTController(CustomerService customerService) {
     @GetMapping(path = "/v1/customers")
     @ResponseStatus(HttpStatus.OK)
     public List<CustomerResponse> getAllCustomers() {
-        return customerService.getAllCustomersWithFilters();
+        return customerService.getAllCustomers();
     }
 
     @PostMapping(path = "/v1/customers")

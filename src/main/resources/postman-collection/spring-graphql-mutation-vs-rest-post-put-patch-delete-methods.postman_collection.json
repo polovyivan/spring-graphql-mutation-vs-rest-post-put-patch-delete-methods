@@ -475,14 +475,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8001/spring-graphql-mutation-vs-rest-post-put-patch-methods/v1/customers",
+					"raw": "http://localhost:8001/spring-graphql-mutation-vs-rest-post-put-patch-delete-methods/v1/customers",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8001",
 					"path": [
-						"spring-graphql-mutation-vs-rest-post-put-patch-methods",
+						"spring-graphql-mutation-vs-rest-post-put-patch-delete-methods",
 						"v1",
 						"customers"
 					],
@@ -522,14 +522,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8001/spring-graphql-mutation-vs-rest-post-put-patch-methods/v1/customers",
+					"raw": "http://localhost:8001/spring-graphql-mutation-vs-rest-post-put-patch-delete-methods/v1/customers",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8001",
 					"path": [
-						"spring-graphql-mutation-vs-rest-post-put-patch-methods",
+						"spring-graphql-mutation-vs-rest-post-put-patch-delete-methods",
 						"v1",
 						"customers"
 					],
@@ -569,14 +569,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8001/spring-graphql-mutation-vs-rest-post-put-patch-methods/v1/customers/5909957b-17a0-4340-bc6a-18c90f225c61o",
+					"raw": "http://localhost:8001/spring-graphql-mutation-vs-rest-post-put-patch-delete-methods/v1/customers/5909957b-17a0-4340-bc6a-18c90f225c61o",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8001",
 					"path": [
-						"spring-graphql-mutation-vs-rest-post-put-patch-methods",
+						"spring-graphql-mutation-vs-rest-post-put-patch-delete-methods",
 						"v1",
 						"customers",
 						"5909957b-17a0-4340-bc6a-18c90f225c61o"
@@ -617,14 +617,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8001/spring-graphql-mutation-vs-rest-post-put-patch-methods/v1/customers/afd457dc-81b8-4b4f-9b7f-98cb28da371c",
+					"raw": "http://localhost:8001/spring-graphql-mutation-vs-rest-post-put-patch-delete-methods/v1/customers/afd457dc-81b8-4b4f-9b7f-98cb28da371c",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8001",
 					"path": [
-						"spring-graphql-mutation-vs-rest-post-put-patch-methods",
+						"spring-graphql-mutation-vs-rest-post-put-patch-delete-methods",
 						"v1",
 						"customers",
 						"afd457dc-81b8-4b4f-9b7f-98cb28da371c"
@@ -665,14 +665,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8001/spring-graphql-mutation-vs-rest-post-put-patch-methods/v1/customers/80d69df0-f934-4ecf-9e58-0d28034f8d96",
+					"raw": "http://localhost:8001/spring-graphql-mutation-vs-rest-post-put-patch-delete-methods/v1/customers/80d69df0-f934-4ecf-9e58-0d28034f8d96",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8001",
 					"path": [
-						"spring-graphql-mutation-vs-rest-post-put-patch-methods",
+						"spring-graphql-mutation-vs-rest-post-put-patch-delete-methods",
 						"v1",
 						"customers",
 						"80d69df0-f934-4ecf-9e58-0d28034f8d96"
@@ -713,17 +713,17 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8001/spring-graphql-mutation-vs-rest-post-put-patch-methods/v1/customers/724ebd5f-e86e-44ce-b2f2-bb20cd25f5b1/purchase-transactions",
+					"raw": "http://localhost:8001/spring-graphql-mutation-vs-rest-post-put-patch-delete-methods/v1/customers/e83a5769-9141-4123-840f-05452479554d/purchase-transactions",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8001",
 					"path": [
-						"spring-graphql-mutation-vs-rest-post-put-patch-methods",
+						"spring-graphql-mutation-vs-rest-post-put-patch-delete-methods",
 						"v1",
 						"customers",
-						"724ebd5f-e86e-44ce-b2f2-bb20cd25f5b1",
+						"e83a5769-9141-4123-840f-05452479554d",
 						"purchase-transactions"
 					],
 					"query": [
@@ -812,14 +812,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8001/spring-graphql-mutation-vs-rest-post-put-patch-methods/v1/customers/3c729076-dd84-4ca3-9096-d9488abdd75c/purchase-transactions/37d3dd3e-923a-4fd8-8a5f-40f20c1416ee",
+					"raw": "http://localhost:8001/spring-graphql-mutation-vs-rest-post-put-patch-delete-methods/v1/customers/3c729076-dd84-4ca3-9096-d9488abdd75c/purchase-transactions/37d3dd3e-923a-4fd8-8a5f-40f20c1416ee",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8001",
 					"path": [
-						"spring-graphql-mutation-vs-rest-post-put-patch-methods",
+						"spring-graphql-mutation-vs-rest-post-put-patch-delete-methods",
 						"v1",
 						"customers",
 						"3c729076-dd84-4ca3-9096-d9488abdd75c",
@@ -862,19 +862,19 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8001/spring-graphql-mutation-vs-rest-post-put-patch-methods/v1/customers/3c729076-dd84-4ca3-9096-d9488abdd75c/purchase-transactions/37d3dd3e-923a-4fd8-8a5f-40f20c1416ee",
+					"raw": "http://localhost:8001/spring-graphql-mutation-vs-rest-post-put-patch-delete-methods/v1/customers/:customerId/purchase-transactions/:purchaseTransaction",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8001",
 					"path": [
-						"spring-graphql-mutation-vs-rest-post-put-patch-methods",
+						"spring-graphql-mutation-vs-rest-post-put-patch-delete-methods",
 						"v1",
 						"customers",
-						"3c729076-dd84-4ca3-9096-d9488abdd75c",
+						":customerId",
 						"purchase-transactions",
-						"37d3dd3e-923a-4fd8-8a5f-40f20c1416ee"
+						":purchaseTransaction"
 					],
 					"query": [
 						{
@@ -891,6 +891,16 @@
 							"key": "createdAt",
 							"value": "2016-01-30",
 							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "customerId",
+							"value": "f0814cca-930e-4117-8a3c-b24d950da2f3"
+						},
+						{
+							"key": "purchaseTransaction",
+							"value": "f4bd4054-184f-48a1-a85f-edaf725636ea"
 						}
 					]
 				}

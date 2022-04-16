@@ -26,11 +26,6 @@ public record CustomerService(CustomerRepository customerRepository,
                               PurchaseTransactionRepository purchaseTransactionRepository) {
 
     public List<CustomerResponse> getAllCustomers() {
-        log.info("Getting all customers...");
-        return customerRepository.findAll().stream().map(CustomerResponse::valueOf).collect(Collectors.toList());
-    }
-
-    public List<CustomerResponse> getAllCustomersWithFilters() {
         log.info("Getting all customers... ");
         return customerRepository.findAll()
                 .stream()
